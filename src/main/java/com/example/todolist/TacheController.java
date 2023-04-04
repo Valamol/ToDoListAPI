@@ -24,7 +24,6 @@ public class TacheController {
     }
     @PostMapping
     public Taches createTache(@RequestBody Taches taches) {
-        System.out.println("add");
         return tacheRepository.save(taches);
     }
 }
