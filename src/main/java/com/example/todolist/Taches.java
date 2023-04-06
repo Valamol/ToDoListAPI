@@ -14,7 +14,7 @@ public class Taches {
     @Column(name = "id")
     private Long id;
     @Column(name = "user", length = 15)
-    private String user;
+    private long user;
     @Column(name = "name", length = 15)
     private String name;
     @Column(name = "date")

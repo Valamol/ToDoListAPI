@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 @RestController
-@RequestMapping("/public/users")
+@RequestMapping("/users")
 public class UserController {
 
     @Autowired

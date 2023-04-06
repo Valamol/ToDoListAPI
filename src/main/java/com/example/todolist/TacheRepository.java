@@ -7,5 +7,6 @@ import java.util.List;
 
 @Repository
 public interface TacheRepository extends JpaRepository<Taches, Long> {
-    List<Taches> findByUser(String user);
+
+    List<Taches> findByUser(long id);
 }
