@@ -2,6 +2,8 @@ package com.example.todolist;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.LocalDate;
 
@@ -13,15 +15,15 @@ public class Taches {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "user", length = 15)
+    @Column(name = "user", length = 25)
     private long user;
     @Column(name = "name", length = 15)
     private String name;
     @Column(name = "date")
     private LocalDate date;
-    //@Column(name = "time")
-    //private LocalTime time;
-    @Column(name = "description", length = 30)
+    @Column(name = "time")
+    private LocalTime timeF;
+    @Column(name = "description", length = 300)
     private String description;
 
 }

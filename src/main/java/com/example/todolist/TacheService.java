@@ -19,4 +19,6 @@ public class TacheService  {
     public void delete(long id){
         tacheRepository.delete(tacheRepository.findById(id).get());
     }
+
+    public List<Taches> findAll() {return tacheRepository.findAll();}
 }

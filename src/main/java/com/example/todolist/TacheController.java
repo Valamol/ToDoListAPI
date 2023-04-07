@@ -16,9 +16,12 @@ public class TacheController {
 
     @GetMapping("/byUser/{id}")
     public ResponseEntity<List<Taches>> getTachesByUser (@PathVariable long id){
-        System.out.println(tacheService.findByUser(id));
-        System.out.println(id);
         return new ResponseEntity<List<Taches>>(tacheService.findByUser(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/notif")
+    public ResponseEntity<List<Taches>> getTime (){
+        return new ResponseEntity<List<Taches>>(tacheService.findAll(), HttpStatus.OK);
     }
 
     @PostMapping("/")

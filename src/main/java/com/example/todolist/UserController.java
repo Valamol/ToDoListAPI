@@ -16,8 +16,6 @@ import java.util.logging.Logger;
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
-    @Autowired
     private UserService userService;
 
     @PostMapping("/register")
@@ -25,7 +23,11 @@ public class UserController {
         Users newUser = userService.createUser(user);
         return ResponseEntity.ok(newUser);
     }
-
+    @GetMapping("/byUser/{pseudo}")
+    public ResponseEntity getTachesByUser (@PathVariable String pseudo){
+        System.out.println(pseudo);
+        return new ResponseEntity (userService.findByPseudo(pseudo), HttpStatus.OK);
+    }
     @PostMapping("/login")
     public ResponseEntity<Map<String, Object>> authenticate(@RequestBody Map<String, String> credentials) {
         String pseudo = credentials.get("pseudo");
